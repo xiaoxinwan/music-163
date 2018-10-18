@@ -9,7 +9,7 @@
 
 
 .page {display: flex; flex-direction: column; height: 100vh;}
-.page-background {position: fixed; width: 100%; height: 100%; background: url(//pfn28omfk.bkt.clouddn.com/bg.png) no-repeat; 
+.page-background {position: fixed; width: 100%; height: 100%; background: url(http://pfn28omfk.bkt.clouddn.com/bg.png) no-repeat; 
     background-size: auto 100%; background-position: 50%; transform: scale(1.5); z-index: -1;}
 
 /* disc-container */
