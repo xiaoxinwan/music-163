@@ -23,7 +23,7 @@ $(function() {
 
     })
     let audio = document.createElement('audio')
-    audio.src= "http://pfn28omfk.bkt.clouddn.com/%E4%BB%8E%E6%97%A0%E5%88%B0%E6%9C%89.mp3"
+    audio.src= "//pfn28omfk.bkt.clouddn.com/%E4%BB%8E%E6%97%A0%E5%88%B0%E6%9C%89.mp3"
     audio.oncanplay = function(){
         audio.play()
         $('.disc-container').addClass('playing')

@@ -4,12 +4,15 @@
   "description": "1.",
   "main": "song.js",
   "scripts": {
-    "start":"http-server -c-1",		  
+    "start": "http-server -c-1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "http-server": "^0.11.1"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
   }
 }
