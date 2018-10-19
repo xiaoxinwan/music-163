@@ -19,7 +19,7 @@
 .disc-container .disc {display: flex; justify-content: center; align-items: center; margin-top: 13vw;}
 .disc-container .disc .circle {width: 80vw;}
 .disc-container .disc .halo {width: 80vw; position: absolute;}
-.disc-container .disc .cover {width: 49vw; border-radius: 50%; position: absolute;}
+.disc-container .disc .cover {width: 50vw; border-radius: 50%; position: absolute;}
 .disc-container .disc .playButton{
     position: absolute;
     border: 1px solid white;
@@ -41,8 +41,15 @@
     fill: white;
     
 }
+.disc-container .halo,
+.disc-container .cover{
+    animation: spin 20s infinite linear;
+    animation-play-state: paused;
+}
 .disc-container.playing .halo,
-.disc-container.playing .cover{animation: spin 20s infinite linear;}
+.disc-container.playing .cover{
+    animation-play-state: running;
+}
 
 /* song-description */
 .song-description {

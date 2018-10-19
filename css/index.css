@@ -92,7 +92,9 @@ h2.words::after {
     -webkit-box-orient: vertical;
 }
 
-.latestMusic {}
+.latestMusic {
+    
+}
 
 .icon {
     display: inline-block;
@@ -101,12 +103,15 @@ h2.words::after {
     vertical-align: -0.15em;
     fill: grey;
 }
-
+.latestMusic p{
+    text-align: center;
+    padding: 5vw;
+}
 .latestMusic ol {
     padding-left: 10px;
 }
 
-.latestMusic li {
+.latestMusic li>a {
     color: rgb(51, 51, 51);
     padding: 6px 0;
     border-bottom: 1px solid #efefef;

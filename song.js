@@ -1,4 +1,29 @@
 $(function() {
+    let id = parseInt(location.search.match(/\bid=([^&]*)/)[1],10)
+    
+    $.get('./songs.json').then(function(response) {
+        let songs = response
+        let song = songs.filter(songs =>songs.id===id)[0]
+        let { url,cover,name } = song
+        let audio = document.createElement('audio')
+        audio.src = url
+        audio.muted = ""
+        audio.oncanplay = function() {
+            audio.play()
+            $('.disc-container').addClass('playing')
+        }
+        $('.cover').on('click', function() {
+            audio.pause()
+            $('.disc-container').removeClass('playing')
+        })
+        $('.playButton').on('click', function() {
+            audio.play()
+            $('.disc-container').addClass('playing')
+        })
+
+        $('.cover')[0].src = cover
+        $('.song-description>h1')[0].innerText = name
+    })
 
     $.get('/lyric.json').then(function(object) {
         // 从lyric.json中获取，通过regex分隔开时间和内容，
@@ -21,20 +46,5 @@ $(function() {
             $p.appendTo($lyric.children('.lyric-wrapper'))
         })
 
-    })
-    let audio = document.createElement('audio')
-    audio.src= "http://pfn28omfk.bkt.clouddn.com/%E4%BB%8E%E6%97%A0%E5%88%B0%E6%9C%89.mp3"
-    audio.muted = ""
-    audio.oncanplay = function(){
-        audio.play()
-        $('.disc-container').addClass('playing')
-    }
-    $('.cover').on('click',function(){
-        audio.pause()
-        $('.disc-container').removeClass('playing')
-    })
-    $('.playButton').on('click',function(){
-        audio.play()
-        $('.disc-container').addClass('playing')
     })
 })
