@@ -75,6 +75,9 @@
     height: 96px;
     overflow: hidden;
 }
+.song-description .lyric-wrapper{
+    transition: transform 0.5s;
+}
 .song-description p.active{
     color: #fefefe;
 }

@@ -4,14 +4,14 @@ $(function() {
     $.get('./songs.json').then(function(response) {
         let songs = response
         let song = songs.filter(songs =>songs.id===id)[0]
-        let { url,cover,name,lyric } = song
+        let { url,cover,name,artist,lyric } = song
         
         initPlayer.call(undefined, url)
-        initText(cover,name,lyric)
+        initText(cover,name,artist,lyric)
     })
     
     function initPlayer(url){
-        console.log(1);
+        
         
         let audio = document.createElement('audio')
         audio.src = url
@@ -28,16 +28,40 @@ $(function() {
             audio.play()
             $('.disc-container').addClass('playing')
         })
+        setInterval(()=>{
+            
+            let seconds = audio.currentTime
+            let minutes = ~~(seconds/60)
+            let left = seconds - minutes*60
+            let time = `${pad(minutes)}: ${pad(left)}`
+            let $lyric = $('.lyric-wrapper > p')
+            let $whichlyric
+            for(let i=0; i<$lyric.length; i++){
+                if($lyric[i+1] !== undefined && $lyric.eq(i).attr('data-time') < time && $lyric.eq(i+1).attr('data-time') > time){
+                    
+                    $whichlyric = $lyric.eq(i)
+                    break
+                }
+            }
+            if($whichlyric){
+                $whichlyric.addClass('active').prev().removeClass('active')
+                let top = $whichlyric.offset().top
+                let lyricTop = $('.lyric-wrapper').offset().top
+                let delta = top - lyricTop - $('.lyric').height()/3
+                $('.lyric-wrapper').css('transform',`translateY(-${delta}px)`)
+            }
+        },500)
     }
-    function initText(cover,name,lyric){
+    function pad(number){
+        return number > 10 ? number + '' : '0' + number
+    }
+    function initText(cover,name,artist,lyric){
         $('.cover')[0].src = cover
-        $('.song-description>h1')[0].innerText = name
+        $('.song-description>h1')[0].innerText = name + '-' + artist
         parseLyric(lyric)
     }
     function parseLyric (lyric){
-        console.log('hhhhhhh')
-        let array = lyric.split('\n')
-        console.log(array)
+        let array = lyric.split('\n')    
         let regex = /^\[(.+)\](.*)$/
         
         array = array.map((string) => {
