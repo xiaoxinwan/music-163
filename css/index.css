@@ -139,7 +139,7 @@ h2.words::after {
 section.logo {}
 
 section.logo {
-    background: url(/image/foot-bg.png);
+    background: url(http://pfn28omfk.bkt.clouddn.com/foot-bg.png);
     background-size: cover;
     padding-top: 16.9vw;
     display: flex;
