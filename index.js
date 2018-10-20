@@ -2,6 +2,7 @@ $(function() {
     $.get('./songs.json').then(function(response) {
         //response 可能是字符串
         let items = response
+        console.log(1)
         items.forEach((i) => {
             console.log(i.id)
             let $li = $(`

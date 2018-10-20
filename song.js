@@ -4,7 +4,15 @@ $(function() {
     $.get('./songs.json').then(function(response) {
         let songs = response
         let song = songs.filter(songs =>songs.id===id)[0]
-        let { url,cover,name } = song
+        let { url,cover,name,lyric } = song
+        
+        initPlayer.call(undefined, url)
+        initText(cover,name,lyric)
+    })
+    
+    function initPlayer(url){
+        console.log(1);
+        
         let audio = document.createElement('audio')
         audio.src = url
         audio.muted = ""
@@ -20,17 +28,18 @@ $(function() {
             audio.play()
             $('.disc-container').addClass('playing')
         })
-
+    }
+    function initText(cover,name,lyric){
         $('.cover')[0].src = cover
         $('.song-description>h1')[0].innerText = name
-    })
-
-    $.get('/lyric.json').then(function(object) {
-        // 从lyric.json中获取，通过regex分隔开时间和内容，
-        // 遍历数组，得到一个新的对象{time: value, words: value}
-        let { lyric } = object
+        parseLyric(lyric)
+    }
+    function parseLyric (lyric){
+        console.log('hhhhhhh')
         let array = lyric.split('\n')
+        console.log(array)
         let regex = /^\[(.+)\](.*)$/
+        
         array = array.map((string) => {
                 let matches = string.match(regex)
                 if (matches) {
@@ -45,6 +54,7 @@ $(function() {
             $p.attr('data-time', object.time).text(object.words)
             $p.appendTo($lyric.children('.lyric-wrapper'))
         })
+    }
 
-    })
+   
 })
