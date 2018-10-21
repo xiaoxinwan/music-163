@@ -48,7 +48,35 @@
     left: 0;
     width: 100%;
 }
+.tabContent > li{
+    display: none;
+}
+.tabContent > li.active{
+    display: block;
+}
 
+section.hotmusicBar{
+    width: 100%;
+    padding: 7.5vw 0 13.5vw 0;
+    padding-left: 5.333vw;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    background: url(/image/hot_music_bg.jpg) no-repeat;
+    background-size: cover;
+}
+section.hotmusicBar::after{
+    position: absolute;
+    content: "";
+    z-index: 1;
+    background-color: rgba(0,0,0,.2);
+}
+section.hotmusicBar > .hotmusic{
+    background: url(/image/hotmusic.png);
+    background-size: cover;
+    height: 67px;
+    width: 142px;
+}
 .recommendedSonglist {
     padding: 20px 0 24px 0;
 }
@@ -171,4 +199,82 @@ section.logo>.copyright {
     line-height: 16px;
     color: #888;
     transform: scale(.75);
+}
+section.search{
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    margin: 20px 0;
+    border-radius: 40px;
+    background: rgb(235, 236, 236);
+    margin: 20px 10px 0 10px;
+}
+section.search > .searchIcon{
+    width: 14px;
+    height: 14px;
+    fill: #888888;
+}
+#searchSong{
+    outline: none;
+    border: none;
+    height: 30px;
+    width: 100%;
+    padding-left: 10px;
+    position: relative;
+    background: transparent;
+}
+section.search > .searchInner{
+    position: absolute;
+    left: 40px;
+    font-size: 14px;
+    color: #c9c9c9;
+    pointer-events: none;
+}
+#output.active{
+    border-bottom: 1px solid #c9c9c9;
+    line-height: 18px;
+    margin: 5px 20px 0 40px;
+    padding: 5px;
+}
+
+section.playlists  a.song{
+    display: flex;
+    padding: 5px 0;
+}
+section.playlists  a.song > .serialNum {
+    padding-left: 10px;
+    align-self: center;
+    color: #888888;
+}
+section.playlists a.song > .song-wrapper{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #efefef;
+}
+section.playlists a.song > .song-wrapper > .icon{
+    fill: #888888;
+    margin-right: 10px;
+}
+section.playlists a.song > .song-wrapper > .songInfo{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+
+    color: #333333;
+    font-size: 17px;
+}
+section.playlists a.song > .song-wrapper > .songInfo > .artist{
+    color: #888888;
+    font-size: 12px;
+    padding-top: 2px;
+}
+section.foot{
+    text-align: center;
+    padding: 17px 0;
+    font-size: 14px;
+    color: #888888;
 }
