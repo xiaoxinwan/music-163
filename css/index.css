@@ -72,7 +72,7 @@ section.hotmusicBar::after{
     background-color: rgba(0,0,0,.2);
 }
 section.hotmusicBar > .hotmusic{
-    background: url(/image/hotmusic.png);
+    background: url(/image/hotmusic.jpg);
     background-size: cover;
     height: 67px;
     width: 142px;

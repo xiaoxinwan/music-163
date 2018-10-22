@@ -19,7 +19,6 @@ $(function() {
             </li>
             `)
             $('#latestMusic').append($li)
-                // $('#hotmusicPlaylist').append($li)
         })
         $('#latestMusicLoading').remove()
     });
