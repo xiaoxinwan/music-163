@@ -1,0 +1,162 @@
+.playList{
+    min-height: 100%;
+}
+.plHeader{
+    padding: 30px 10px 30px 15px;
+    position: relative;
+    overflow: hidden;
+}
+.plHeaderBg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(//music.163.com/api/img/blur/109951163853845357?param=170y170);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    filter: blur(20px);
+    transform: scale(1.5);
+}
+.plHeaderWrapper{
+    position: relative;
+    display: flex;
+}
+.plHeaderWrapper .coverWrapper > img {
+    width: 114px;
+    height: 114px;
+
+}
+.plHeaderWrapper .coverWrapper span{
+    border: 1px solid red;
+    background: rgba(217,48,48,.9);
+    color: #ffffff;
+    font-size: 9px;
+    height: 17px;
+    text-align: center;
+    padding: 0 8px;
+    border-top-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+.plHeaderWrapper .plName{
+    margin-left: 16px;
+    flex: 1 1 auto;
+}
+.plHeaderWrapper .plName .plTitle{
+    color: #fefefe;
+    font-size: 17px;
+    line-height: 1.3;
+    height: 44px;
+    padding-top: 1px;
+}
+.plHeaderWrapper .plName .plCreator{
+    margin-top: 20px;
+    color: hsla(0,0%,100%,.7);
+    display: flex;
+    align-items: center;
+}
+.plHeaderWrapper .plName .plCreator img{
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+}
+.plHeaderWrapper .plName .plCreator span{
+    margin-left: 5px;
+}
+
+.plIntro{
+    padding-top: 10px;
+    margin-left: 15px;
+    margin-right: 10px;
+    color: #666;
+
+}
+.plIntro .tags{
+    line-height: 20px;
+    display: flex;
+    font-size: 14px;
+
+    align-items: center;
+}
+.plIntro .tags li{
+    border: 1px solid #EDEDED;
+    font-size: 13px;
+    padding: 1px 10px;
+    border-radius: 14px;
+    margin-right: 10px;
+}
+.plIntro .plIntroduceText{
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+
+.plDetail{
+}
+.plDetail h3{
+    font-size: 13px;
+    height: 23px;
+    line-height: 23px;
+    color: #666;
+    background: #eeeff0;
+    padding: 0 10px;
+}
+.plDetail .plSongs li{
+    display: flex;
+    padding-top: 10px;
+}
+.icon{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    fill: #a0a0a0;
+    display: flex;
+    align-items: center;
+    margin: auto 10px;
+
+}
+.plDetail .plSongs .songNum {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    font-size: 17px;
+    color: #999999;
+}
+.plDetail .plSongs .songContent{
+    flex: 1 1 auto;
+    display: flex;
+    border-bottom: 1px solid #f1f2f4;
+    position: relative;
+    padding-bottom: 5px;
+
+}
+.plDetail .plSongs .songContent .songContentWrapper{
+    flex: 1 1 auto;
+    width: 0;
+}
+.plDetail .plSongs .songContent .songContentWrapper .songTitle{
+    font-size: 17px;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: normal;
+}
+.plDetail .plSongs .songContent .songContentWrapper .singer{
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: normal;
+}

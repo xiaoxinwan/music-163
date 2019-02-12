@@ -9,7 +9,6 @@ $(function() {
         let cover = response.songs[0].al.picUrl
         let name = response.songs[0].name
         let artist = response.songs[0].ar[0].name
-
         $('.cover')[0].src = cover
         $('.page-background').css('background-image',`url(${cover})`)
         $('.song-description>h1')[0].innerText = name + '-' + artist
@@ -20,8 +19,6 @@ $(function() {
         parseLyric(lyric)
     })
     function initPlayer(url){
-
-
         let audio = document.createElement('audio')
         audio.src = url
         audio.muted = ""
@@ -38,7 +35,6 @@ $(function() {
             $('.disc-container').addClass('playing')
         })
         setInterval(()=>{
-
             let seconds = audio.currentTime
             let minutes = ~~(seconds/60)
             let left = seconds - minutes*60
@@ -63,10 +59,7 @@ $(function() {
     function pad(number){
         return number > 10 ? number + '' : '0' + number
     }
-    function initText(cover,name,artist,lyric){
 
-
-    }
     function parseLyric (lyric){
         let array = lyric.split('\n')
         let regex = /^\[(.+)\](.*)$/
